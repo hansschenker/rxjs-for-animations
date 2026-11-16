@@ -1,0 +1,83 @@
+{
+  "name": "rxjs-for-animations",
+  "version": "0.1.0",
+  "description": "Animation values, state, composition, and browser adapters for RxJS 7.8.2.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Hans Schenker",
+    "url": "https://github.com/hansschenker"
+  },
+  "contributors": [
+    {
+      "name": "ChatGPT \u2014 GPT-6 Astra (OpenAI), main implementation contributor and AI co-author",
+      "url": "https://openai.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansschenker/rxjs-for-animations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hansschenker/rxjs-for-animations/issues"
+  },
+  "homepage": "https://github.com/hansschenker/rxjs-for-animations#readme",
+  "keywords": [
+    "rxjs",
+    "animation",
+    "typescript",
+    "functional",
+    "web-animations",
+    "observable"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./dom": {
+      "types": "./dist/adapters/dom.d.ts",
+      "import": "./dist/adapters/dom.js"
+    },
+    "./web-animation": {
+      "types": "./dist/adapters/web-animation.d.ts",
+      "import": "./dist/adapters/web-animation.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "docs",
+    "README.md",
+    "CONTRIBUTORS.md",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc -p tsconfig.build.json",
+    "build:demo": "vite build",
+    "check": "npm run typecheck && npm test && npm run build && npm run build:demo",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.10",
+    "fast-check": "3.23.2",
+    "rxjs": "7.8.2",
+    "typescript": "5.8.3",
+    "vite": "6.1.0",
+    "vitest": "3.0.7"
+  }
+}

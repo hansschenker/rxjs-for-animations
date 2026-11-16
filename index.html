@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Three examples of animation as values and state over time, using RxJS 7.8.2." />
+    <title>RxJS for animations</title>
+    <link rel="stylesheet" href="/examples/demo.css" />
+  </head>
+  <body>
+    <header class="masthead wrap">
+      <a class="brand" href="https://github.com/hansschenker/rxjs-for-animations" aria-label="RxJS for animations repository">
+        <span class="brand-mark" aria-hidden="true">rx</span>
+        <span>RxJS for animations</span>
+      </a>
+      <nav aria-label="Project links">
+        <a href="#sources">Inspirations</a>
+        <a href="https://github.com/hansschenker/rxjs-for-animations#readme" target="_blank" rel="noopener noreferrer">Read the source <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">RxJS 7.8.2 <span aria-hidden="true">/</span> Experimental library</p>
+        <h1 id="page-title">Animation.<br /><span>A stream of state.</span></h1>
+        <p class="intro-copy">Time supplies the input. Small functions describe the motion.<br class="wide-only" /> A renderer makes the values visible.</p>
+      </section>
+
+      <div class="demo-grid">
+        <section class="card trail-card" aria-labelledby="trail-title">
+          <div class="card-heading">
+            <div>
+              <p class="study-number">01 <span>State</span></p>
+              <h2 id="trail-title">Pointer trail</h2>
+              <p>One movement, one dot. Each drifts and fades for a second.</p>
+            </div>
+            <button id="trail-toggle" type="button" aria-pressed="false">Start trail</button>
+          </div>
+          <div id="trail-stage" class="trail-stage">
+            <div class="stage-hint" aria-hidden="true">
+              <span class="crosshair"></span>
+              <span>Move your pointer here</span>
+            </div>
+            <div id="dot-layer" aria-hidden="true"></div>
+            <div class="stage-corner"><span id="trail-count">0</span> live dots</div>
+          </div>
+          <div class="card-footer">
+            <span class="pipeline">input <span>→</span> scan <span>→</span> view</span>
+            <span id="trail-status" class="status" role="status">Ready</span>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="tween-title">
+          <div class="card-heading">
+            <div>
+              <p class="study-number">02 <span>Values</span></p>
+              <h2 id="tween-title">A value over time</h2>
+              <p>A smooth journey from 0 to 100.</p>
+            </div>
+          </div>
+          <div class="tween-stage">
+            <div class="value-readout" aria-label="Animated value"><span id="tween-value">0</span><span class="value-unit">/ 100</span></div>
+            <div class="tween-track" aria-hidden="true">
+              <div id="tween-fill" class="tween-fill"></div>
+              <div id="tween-marker" class="tween-marker"></div>
+            </div>
+            <div class="scale-labels" aria-hidden="true"><span>0</span><span>100</span></div>
+          </div>
+          <div class="action-row">
+            <button id="tween-play" type="button">Play tween</button>
+            <span class="detail">easeInOutCubic · 900 ms</span>
+          </div>
+          <div class="card-footer">
+            <span class="pipeline">time <span>→</span> easing <span>→</span> value</span>
+            <span id="tween-status" class="status" role="status">Ready</span>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="native-title">
+          <div class="card-heading">
+            <div>
+              <p class="study-number">03 <span>Composition</span></p>
+              <h2 id="native-title">Together or in order</h2>
+              <p>The same move and fade, with two timing policies.</p>
+            </div>
+          </div>
+          <div class="native-stage" aria-hidden="true">
+            <div class="native-guide"></div>
+            <div id="native-orb" class="native-orb"><span></span></div>
+          </div>
+          <div class="action-row">
+            <div class="button-pair">
+              <button id="native-sequence" type="button">Sequence</button>
+              <button id="native-group" type="button" class="secondary">Group</button>
+            </div>
+            <span class="detail">Native Web Animations</span>
+          </div>
+          <div class="card-footer">
+            <span class="pipeline">sequence <span>/</span> group</span>
+            <span id="native-status" class="status" role="status">Ready</span>
+          </div>
+        </section>
+      </div>
+
+      <p class="motion-note">When your system requests reduced motion, the trail starts stopped and button-driven examples jump to their endpoint. Starting the trail explicitly enables its motion.</p>
+    </main>
+
+    <footer id="sources" class="page-footer wrap">
+      <div>
+        <p class="footer-heading">Ideas brought together</p>
+        <a href="https://github.com/benlesh/rxjs-web-animation" target="_blank" rel="noopener noreferrer">Ben Lesh · rxjs-web-animation <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/hansschenker/rxjs-animations" target="_blank" rel="noopener noreferrer">Hans Schenker · rxjs-animations <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="credits">
+        <p>Main implementation contributor &amp; AI co-author<br /><strong>ChatGPT — GPT-6 Astra</strong></p>
+        <p>Project direction: Hans Schenker<br /><a href="https://github.com/hansschenker/rxjs-for-animations/blob/main/LICENSE">MIT License</a></p>
+      </div>
+    </footer>
+    <noscript><p class="wrap">Enable JavaScript to run these interactive examples.</p></noscript>
+    <script type="module" src="/examples/demo.ts"></script>
+  </body>
+</html>

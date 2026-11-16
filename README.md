@@ -2,7 +2,8 @@
 
 **Animation values, state, composition, and explicit rendering with RxJS 7.8.2.**
 
-**Main contributor and AI co-author: ChatGPT — GPT-6 Astra (OpenAI).**  
+**Main contributor and AI co-author: ChatGPT — GPT-6 Astra (OpenAI).**
+
 Project owner, direction, and review: [Hans Schenker](https://github.com/hansschenker).
 
 An animation is a stream of visual states calculated from time, inputs, and motion rules. This library turns that idea into strict, functional TypeScript: lazy clocks, progress, easing, interpolation, motion, immutable particle state, composition trees, and small browser adapters.
